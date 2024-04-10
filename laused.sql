@@ -106,7 +106,7 @@ add City nvarchar(25)
 select * from Person where City = 'Gotham'
 
 
--- kõik, kes ei ela Gothamis
+-- query to select a person who doesnt live in Gotham
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
