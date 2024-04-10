@@ -87,7 +87,7 @@ add constraint CK_Person_Age check (Age > 0 and Age < 150)
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
---?
+--удаляем человека с ID=8, в данном случае Test.
 select * from Person
 go
 delete from Person where Id = 8
@@ -98,7 +98,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- команда выбирает всех у кого город Gotham и выводит в таблице. Но мы не заполняли столбец City по этому ответ на команду пустой.
 select * from Person where City = 'Gotham'
 
 
@@ -106,51 +106,52 @@ select * from Person where City = 'Gotham'
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
+-- Команды выполняют одну и ту же функцию. Но из-за того что некоторые столдбцы таблицы не заподнены то результат остается пустым.
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- Первый запрос дает пустую таблицу из-за незаполненных полей. Второй запрос выдает всех людей у кого есть @ в емэйле.
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- ?
+-- Запрос выдает всех у кого нету @ в емэйле.
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+--Этот запрос выбирает все записи из таблицы Person, где значение в столбце Name начинается с любого символа, кроме W, A и S
 select * from Person where Name like '[^WAS]%'
---- ?
+--- Запрос показывает всех с городом Gotham или New York и возраст равен или больше 40.
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- Первый запрос показывает всю таблицу. Второй запрос показывает первые три записи. Если бы столбец Age был заполнен, то он бы брал 3 самых высоких значения из него и выводил их.
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- Показывает первую половину записей таблицы.
 select top 50 percent * from Person
---?
+--Запрос преобразует значения столбца Age в целые числа с помощью функции CAST, а затем сортирует записи по этим целым значениям.
 select * from Person order by cast(Age as int)
+--Запрос выполняет сортировку по возрасту 
 select * from Person order by Age
 
---?
+--Запрос показывает сумму всех возрастов из таблицы Person
 select sum(cast(Age as int)) from Person
 
---?
+--Запрос показывает минимальный возраст из таблицы Person
 select min(cast(Age as int)) from Person
 
---?
+--Запрос показывает максимальный возраст из таблицы Person
 select max(cast(Age as int)) from Person
-
+--Запрос суммирует возраста людей и группирует их по городу проживания.
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
