@@ -1,10 +1,11 @@
 -- db loomine
-create database ....
+create database merkulovaGit;
 
---?
-DRop DataBASE ....
+--db kustutamine
+DRop DataBASE merkulovaGit;
 
---?
+--tabeli Gender loomine
+use merkulovaGit;
 create table Gender
 (
 Id int NOT NULL primary key,
