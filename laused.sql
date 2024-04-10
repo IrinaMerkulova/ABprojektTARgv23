@@ -83,7 +83,7 @@ alter table Person
 add Age nvarchar(10)
 select * from Person
 
---obnovljaem dannye
+--obnovljaem dannye.
 update Person
 set Age = 149
 where Id = 8
