@@ -279,11 +279,12 @@ update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
 
---- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda
+--- show ID and then select the first non-null value in a list
 select Id, coalesce(FirstName, MiddleName, LastName) as Name
 from Employees
 
 select * from Employees
+
 select * from Department
 
 
