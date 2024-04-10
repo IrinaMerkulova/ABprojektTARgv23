@@ -129,9 +129,10 @@ select * from Person where Email not like '%@%'
 -- only one symbol
 select * from Person where Email like '_@_.com'
 
---?
+-- select person whose name not starts with symbols W A S
 select * from Person where Name like '[^WAS]%'
---- ?
+
+-- select a person from Gotham or New York city older or equals 40 y.o
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
