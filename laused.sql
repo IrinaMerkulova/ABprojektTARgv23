@@ -70,6 +70,7 @@ default 3 for GenderId
 select * from Person
 select * from Gender
 
+--add value into Person table
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
