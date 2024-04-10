@@ -52,10 +52,11 @@ select * from Person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+--- andmete sisestamine tabelisse
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
--- lisame võõrvõtme uuesti
+
+--- lisame võõrvõtme uuesti ja vaikeväärtus
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
