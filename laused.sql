@@ -80,10 +80,10 @@ update Person
 set Age = 149
 where Id = 8
 
---?
+---добавляет ограничение проверки constraint на столбец Age в таблице Person. (Значение обязательно от 0 до 150)
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
-
+---Команда должна добавлять нового человека в табоицу Person. Но она не работает из-за установленных ограничений.
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
