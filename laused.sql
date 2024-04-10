@@ -226,7 +226,7 @@ values (10, 'Russell', 'Male', 8800, NULL)
 --show all values from Employees
 select * from Employees
 
----?
+---select all Name different values, select DepartmentId
 select distinct Name, DepartmentId from Employees
 
 ---?
