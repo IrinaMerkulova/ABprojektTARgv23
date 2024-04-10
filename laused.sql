@@ -116,7 +116,7 @@ select * from Person
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- vybor teh komy 100, 50, 20
+-- vybor teh komy 100, 50, 20.
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
