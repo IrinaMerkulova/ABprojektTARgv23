@@ -230,7 +230,7 @@ select sum(cast(Salary as int)) from Employees
 ---minimalnaja zarplata.
 select min(cast(Salary as int)) from Employees
 
--- novyj stolbec v tablicu Employees
+-- novyj stolbec v tablicu Employees.
 alter table Employees
 add City nvarchar(25)
 
