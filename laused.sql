@@ -133,7 +133,7 @@ select * from Person where Email not like '%@%'
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---vse kto ne nachinaetsa s bukv WAS
+--vse kto ne nachinaetsa s bukv WAS.
 select * from Person where Name like '[^WAS]%'
 --- Gorod raven Gotham ili New York i oni ravny 40 ili bolshe
 select * from Person where (City = 'Gotham' or City = 'New York')
