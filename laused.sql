@@ -167,6 +167,7 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 --- tund 3
 
 --- loome uued tabelid
+use ChernykhGit
 create table Department
 (
 Id int primary key,
@@ -175,6 +176,7 @@ Location nvarchar(50),
 DepartmentHead nvarchar(50)
 )
 
+use ChernykhGit
 create table Employees
 (
 Id int primary key,
@@ -184,7 +186,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+--Inserting values in table Department
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -193,9 +195,10 @@ insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (3, 'HR', 'New York', 'Christie')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (4, 'Other Deparment', 'Sydney', 'Cindrella')
-
+--shows al values from Department
 select * from Department
 
+--Inserting values in table Employees
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (1, 'Tom', 'Male', 4000, 1)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
@@ -216,7 +219,7 @@ insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (9, 'James', 'Male', 6500, NULL)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (10, 'Russell', 'Male', 8800, NULL)
-
+--shows al values from Employees
 select * from Employees
 
 ---?
