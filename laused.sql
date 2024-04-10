@@ -54,7 +54,7 @@ select * from Person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+-- Добавление третьего гендера
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
