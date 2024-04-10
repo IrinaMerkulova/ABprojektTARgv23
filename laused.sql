@@ -79,14 +79,23 @@ update Person
 set Age = 149
 where Id = 8
 
---?
+-- adding constraint with a condition
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
+-- deleting constraint
+alter table Person
+drop constraint CK_Person_Age
+
+-- adding constraint with a condition
+alter table Person
+add constraint CK_Person_Age check (Age > 0 and Age < 161)
+
+--adding data
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
---?
+-- deleting person with id equals to 8
 select * from Person
 go
 delete from Person where Id = 8
