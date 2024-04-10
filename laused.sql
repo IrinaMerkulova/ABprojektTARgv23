@@ -69,12 +69,12 @@ add constraint DF_Person_GenderId
 default 3 for GenderId
 
 
----- 2 smotrim tablicy
+---- 2 smotrim tablicy.
 
 select * from Person
 select * from Gender
 
--- dobavlenie novoj stroki 
+-- dobavlenie novoj stroki. 
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 select * from Person
