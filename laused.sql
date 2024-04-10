@@ -109,7 +109,15 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+--uuendame andmeid
+update Person
+set City = 'Gotham'
+where Id in (1, 3, 5)
+update Person
+set City = 'Los-Angeles'
+where Id = 8
+
+-- show people who lives in Gotham
 select * from Person where City = 'Gotham'
 
 
@@ -117,26 +125,27 @@ select * from Person where City = 'Gotham'
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
+-- show people with conditions
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- where there is 'n' letter in the city
 select * from Person where City like 'n%'
+--- where there is '@' sign in email
 select * from Person where Email like '%@%'
 
--- ?
+-- where are not '@' sign in email
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+--show where Name has one of the letter
 select * from Person where Name like '[^WAS]%'
---- ?
+--- show where city is gotham or 'New York' and age is more and equals than 40
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
