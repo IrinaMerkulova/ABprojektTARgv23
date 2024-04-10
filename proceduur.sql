@@ -3,36 +3,38 @@
 --- loome stored procedure, mis kuvab vaate
 create procedure spGetEmployees
 as begin
-	select FirstName, Gender from Employees
+	select Name, Gender from Employees
 end
 
-spGetEmployees
+
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+--- Vybiraem po genderu i departamentyID
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
 as begin
-	select FirstName, Gender, DepartmentId from Employees where Gender = @Gender
+	select Name, Gender, DepartmentId from Employees where Gender = @Gender
 	and DepartmentId = @DepartmentId
 end
 
---- kõik esimeses osakonnas meessoost töötavad isikud
-spGetEmployeesByGenderAndDepartment 'Male', 1
+--- zapuskaem proceduru gde Gender Male, a departamentID 1
+exec spGetEmployeesByGenderAndDepartment 'Male', 1
 
-spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
+exec spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
 
 
 
---?
+--kolichestvo sotrudnikov s ukazanym polom
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
 as begin
 	select @EmployeeCount = count(Id) from Employees where Gender = @Gender
 end
+
+exec spGetEmployeeCountByGender
 
 -- ?
 declare @TotalCount int

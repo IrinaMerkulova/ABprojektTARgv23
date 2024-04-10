@@ -1,10 +1,11 @@
 -- db loomine
-create database ....
+create database VitaliiGit;
 
---?
-DRop DataBASE ....
+-- udalenie
+DRop DataBASE VitaliiGit;
 
---?
+--Sozdanie tablicy
+use VitaliiGit;
 create table Gender
 (
 Id int NOT NULL primary key,
@@ -19,17 +20,21 @@ Email nvarchar(30),
 GenderId int
 )
 
---- andmete sisestamine tabelisse
+--- Vnesenie dannyh v tablicu
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--Proverjaem tablicu
+select * from Gender
+
+
+-- Sozdaem kluchi
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- Vnosim dannye v tablicu Person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
@@ -45,110 +50,117 @@ values (6, 'Antman', 'ant"ant.com', 2)
 insert into Person (Id, Name, Email, GenderId)
 values (7, 'Spiderman', 'spider@spiderman.com', 2)
 
--- vaatame tabeli andmeid
+-- proverjaem tablicu
 select * from Person
 
---- ?
+---Udalenie klucha
 alter table Person
 drop constraint tblPerson_GenderId_FK
+select * from Person
 
--- ?
+-- Dobavlenie novogo pola v tablicu Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
--- lisame võõrvõtme uuesti
+select * from Gender
+
+-- Dobavlenie vneshnego klucha
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
 
 
----- 2 tund
+---- 2 smotrim tablicy
 
 select * from Person
 select * from Gender
 
+-- dobavlenie novoj stroki 
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
-
----?
+select * from Person
+---dobavljaem novij stolbec
 alter table Person
 add Age nvarchar(10)
+select * from Person
 
---uuendame andmeid
+--obnovljaem dannye
 update Person
 set Age = 149
 where Id = 8
+select * from Person
 
---?
+--Dobavljaem ogranichenie dlja stolbca i obnovljaem dannye,
+--menjaem vozrast soglasnoogranicheniju
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
 insert into Person (Id, Name, Email, GenderId, Age)
-values (9, 'Test', 'Test', 2, 160)
-
---?
+values (9, 'Test', 'Test', 2, 130)
+select * from Person
+--udaljaem polzovatelja s ID 8
 select * from Person
 go
 delete from Person where Id = 8
 go
 select * from Person
 
---- lisame veeru juurde
+--- dobavljaem stolbec City
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- poisk vseh kto s goroda Gotham takih 0
 select * from Person where City = 'Gotham'
+select * from Person
 
-
--- kõik, kes ei ela Gothamis
+-- vseh, kto ne zhivet v Gotham
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
+-- vybor teh komy 100, 50, 20
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- Vybor teh kto gorod nachinaetsja na n i v pochte est @
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- ?
+-- teh u kogo net @ v pochte
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+--vse kto ne nachinaetsa s bukv WAS
 select * from Person where Name like '[^WAS]%'
---- ?
+--- Gorod raven Gotham ili New York i oni ravny 40 ili bolshe
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- tri verhnie zapisi
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- verhnie 50% zapisej
 select top 50 percent * from Person
---?
+--preobrazovanie stolbca Age v celye znachenija
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---?
+--Summa vozrasta
 select sum(cast(Age as int)) from Person
 
---?
+--minimalnyj vozrast
 select min(cast(Age as int)) from Person
 
---?
+--maximalnyj vozrast
 select max(cast(Age as int)) from Person
-
+-- summa vozrastov po gorodam
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
@@ -157,7 +169,7 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 --- tund 3
 
---- loome uued tabelid
+--- Sozdajom novye tablicy
 create table Department
 (
 Id int primary key,
@@ -175,7 +187,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+--vnosim dannye
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -210,55 +222,54 @@ values (10, 'Russell', 'Male', 8800, NULL)
 
 select * from Employees
 
----?
+---imena i ID bez povtorenija
 select distinct Name, DepartmentId from Employees
 
----?
+---summa zarplat
 select sum(cast(Salary as int)) from Employees
----?
+---minimalnaja zarplata
 select min(cast(Salary as int)) from Employees
 
-
+-- novyj stolbec v tablicu Employees
 alter table Employees
 add City nvarchar(25)
 
-
+--novyj stolbec v tablicu Employees
 alter table Employees
-add DepartmentId
-int null
+alter column DepartmentId int NULL;
 
 
---?
+--novyj stolbec v tablicu Employees
 alter table Employees
 add MiddleName nvarchar(30)
-
+--novyj stolbec v tablicu Employees
 alter table Employees
 add LastName nvarchar(30)
 
-update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
-where Id = 1
-update Employees set FirstName = 'Pam', MiddleName = NULL, LastName = 'Anderson'
-where Id = 2
-update Employees set FirstName = 'John', MiddleName = NULL, LastName = NULL
-where Id = 3
-update Employees set FirstName = 'Sam', MiddleName = NULL, LastName = 'Smith'
-where Id = 4
-update Employees set FirstName = NULL, MiddleName = 'Todd', LastName = 'Someone'
+update Employees set Name = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
+where Id = 1;
+update Employees set Name = 'Pam', MiddleName = NULL, LastName = 'Anderson'
+where Id = 2;
+update Employees set Name = 'John', MiddleName = NULL, LastName = NULL
+where Id = 3;
+update Employees set Name = 'Sam', MiddleName = NULL, LastName = 'Smith'
+where Id = 4;
+update Employees set Name = NULL, MiddleName = 'Todd', LastName = 'Someone'
 where Id = 5
-update Employees set FirstName = 'Ben', MiddleName = 'Ten', LastName = 'Sven'
-where Id = 6
-update Employees set FirstName = 'Sara', MiddleName = NULL, LastName = 'Connor'
-where Id = 7
-update Employees set FirstName = 'Valarie', MiddleName = 'Balerine', LastName = NULL
-where Id = 8
-update Employees set FirstName = 'James', MiddleName = '007', LastName = 'Bond'
-where Id = 9
-update Employees set FirstName = NULL, MiddleName = NULL, LastName = 'Crowe'
-where Id = 10
+update Employees set Name = 'Ben', MiddleName = 'Ten', LastName = 'Sven'
+where Id = 6;
+update Employees set Name = 'Sara', MiddleName = NULL, LastName = 'Connor'
+where Id = 7;
+update Employees set Name = 'Valarie', MiddleName = 'Balerine', LastName = NULL
+where Id = 8;
+update Employees set Name = 'James', MiddleName = '007', LastName = 'Bond'
+where Id = 9;
+update Employees set Name = NULL, MiddleName = NULL, LastName = 'Crowe'
+where Id = 10;
 
 
 --- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda
-select Id, coalesce(FirstName, MiddleName, LastName) as Name
+select Id, coalesce(Name, MiddleName, LastName) as Name
 from Employees
 
 select * from Employees
