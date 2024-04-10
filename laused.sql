@@ -102,7 +102,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- query to select a person from Gotham city
 select * from Person where City = 'Gotham'
 
 
