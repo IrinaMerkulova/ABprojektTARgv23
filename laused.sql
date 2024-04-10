@@ -78,7 +78,7 @@ values (8, 'Test', 'Test')
 alter table Person
 add Age nvarchar(10)
 
---uuendame andmeid
+--update data for 1 value in Person
 update Person
 set Age = 149
 where Id = 8
