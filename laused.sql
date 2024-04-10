@@ -4,7 +4,7 @@ create database VitaliiGit;
 -- udalenie
 DRop DataBASE VitaliiGit;
 
---Sozdanie tablicy
+--Sozdanie tablicy.
 use VitaliiGit;
 create table Gender
 (
