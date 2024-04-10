@@ -148,6 +148,7 @@ select top 50 percent * from Person
 
 --select all from person then CAST to change datatype to INT and order by AGE
 select * from Person order by cast(Age as int)
+--select all from person and order by AGE
 select * from Person order by Age
 
 --?
