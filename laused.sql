@@ -1,8 +1,8 @@
 -- db loomine
 create database AleksanderKaasik
 
---?
-DRop DataBASE ....
+-- db kustutamine
+drop database AleksanderKaasik
 
 --?
 create table Gender
