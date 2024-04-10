@@ -178,6 +178,7 @@ Location nvarchar(50),
 DepartmentHead nvarchar(50)
 )
 
+--- create table Employees
 create table Employees
 (
 Id int primary key,
