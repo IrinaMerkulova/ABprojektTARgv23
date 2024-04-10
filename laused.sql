@@ -122,7 +122,7 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- Vybor teh kto gorod nachinaetsja na n i v pochte est @
+--- Vybor teh kto gorod nachinaetsja na n i v pochte est @.
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
