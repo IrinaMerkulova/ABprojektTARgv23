@@ -223,6 +223,7 @@ values (9, 'James', 'Male', 6500, NULL)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (10, 'Russell', 'Male', 8800, NULL)
 
+--show all values from Employees
 select * from Employees
 
 ---?
