@@ -6,16 +6,14 @@ DRop DataBASE ChernykhGit
 
 --Table Gender creating
 use ChernykhGit
-create table Gender
-(
+create table Gender(
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
 
 --Creating table Person
 use ChernykhGit
-create table Person
-(
+create table Person(
 Id int not null primary key,
 Name nvarchar(25),
 Email nvarchar(30),
@@ -68,13 +66,15 @@ default 3 for GenderId
 
 ---- 2 tund
 
+-- Veiw values from Person ja gender
 select * from Person
 select * from Gender
 
+-- Inserting values into table person
 insert into Person (Id, Name, Email)
-values (8, 'Test', 'Test')
+values (9, 'Test', 'Test')
 
----?
+--Adding new row in table Person 
 alter table Person
 add Age nvarchar(10)
 
