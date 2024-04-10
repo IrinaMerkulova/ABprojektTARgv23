@@ -234,18 +234,24 @@ select min(cast(Salary as int)) from Employees
 alter table Employees
 add City nvarchar(25)
 
-
+--Adds column DepartmentId1
 alter table Employees
-add DepartmentId
+add DepartmentId1
 int null
 
 
---?
+--Adds column MiddleName
 alter table Employees
 add MiddleName nvarchar(30)
 
+--Adds column LastName
 alter table Employees
 add LastName nvarchar(30)
+
+--Updates values in table Employees with id from 1 to 10
+-- to make it possible
+alter table Employees
+add FirstName nvarchar(30)
 
 update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
