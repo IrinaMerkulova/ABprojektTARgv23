@@ -155,7 +155,7 @@ select * from Person order by Age
 --Summa vozrasta.
 select sum(cast(Age as int)) from Person
 
---minimalnyj vozrast
+--minimalnyj vozrast.
 select min(cast(Age as int)) from Person
 
 --maximalnyj vozrast
