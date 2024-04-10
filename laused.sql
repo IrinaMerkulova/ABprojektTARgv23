@@ -78,7 +78,7 @@ select * from Gender
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 select * from Person
----dobavljaem novij stolbec
+---dobavljaem novij stolbec.
 alter table Person
 add Age nvarchar(10)
 select * from Person
