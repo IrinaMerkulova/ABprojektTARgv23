@@ -137,17 +137,18 @@ and Age >= 40
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- Shows Name and age for top 3 rows 
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- Shows fist half of values
 select top 50 percent * from Person
---?
+
+--Sohows values from person ordered by age as int/ by age as string
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---?
+--Shows summ of all ages in Person
 select sum(cast(Age as int)) from Person
 
 --?
