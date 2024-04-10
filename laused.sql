@@ -116,8 +116,9 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+-- query to select a person where city starts with the letter n
 select * from Person where City like 'n%'
+
 select * from Person where Email like '%@%'
 
 -- ?
