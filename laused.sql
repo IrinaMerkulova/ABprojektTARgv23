@@ -260,7 +260,7 @@ where Id = 9
 update Employees set Name = NULL, MiddleName = NULL, LastName = 'Crowe'
 where Id = 10
 
-
+---
 --- igast reast võtab esimeses veerus täidetud lahtri ja kuvab ainult seda.(Нужно было изменить FirstName на Name в запросе. )
 select Id, coalesce(Name, MiddleName, LastName) as Name
 from Employees
