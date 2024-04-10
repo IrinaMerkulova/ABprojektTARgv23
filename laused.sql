@@ -238,7 +238,7 @@ select min(cast(Salary as int)) from Employees
 alter table Employees
 add City nvarchar(25)
 
-
+--add new column DepartmentId,  column name 'DepartmentId' in table 'Employees' is specified more than once.
 alter table Employees
 add DepartmentId
 int null
