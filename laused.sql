@@ -1,10 +1,10 @@
 -- db loomine
-create database ....
+create database AntonovS
 
---?
-DRop DataBASE ....
+--kastutamine andmedbaasi
+DROP database Antonov
 
---?
+--loomine table Gender
 create table Gender
 (
 Id int NOT NULL primary key,
@@ -19,17 +19,17 @@ Email nvarchar(30),
 GenderId int
 )
 
---- andmete sisestamine tabelisse
+--- Andmete sisestamine tabelisse
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- Liisa FKey tabelisse Person
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- Liisa andme tabelisse Person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
