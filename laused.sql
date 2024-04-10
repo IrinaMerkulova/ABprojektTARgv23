@@ -158,9 +158,9 @@ select sum(cast(Age as int)) from Person
 --minimalnyj vozrast.
 select min(cast(Age as int)) from Person
 
---maximalnyj vozrast
+--maximalnyj vozrast.
 select max(cast(Age as int)) from Person
--- summa vozrastov po gorodam
+-- summa vozrastov po gorodam.
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
