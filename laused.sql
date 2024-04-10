@@ -112,7 +112,7 @@ add City nvarchar(25)
 select * from Person where City = 'Gotham'
 select * from Person
 
--- vseh, kto ne zhivet v Gotham
+-- vseh, kto ne zhivet v Gotham.
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
