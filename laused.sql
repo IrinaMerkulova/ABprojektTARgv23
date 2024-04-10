@@ -201,6 +201,7 @@ values (4, 'Other Deparment', 'Sydney', 'Cindrella')
 --show all values from department
 select * from Department
 
+--insert values into Employees
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (1, 'Tom', 'Male', 4000, 1)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
