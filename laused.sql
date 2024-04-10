@@ -1,10 +1,11 @@
 -- db loomine
-create database ....
+create database skljarGit;
 
---?
-DRop DataBASE ....
+-- db kustutamine
+DRop DataBASE skljarGit;
 
---?
+--tabeli Gender loomine
+use skljarGit;
 create table Gender
 (
 Id int NOT NULL primary key,
