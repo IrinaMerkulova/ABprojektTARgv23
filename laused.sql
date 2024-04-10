@@ -20,7 +20,7 @@ Email nvarchar(30),
 GenderId int
 )
 
---- Vnesenie dannyh v tablicu
+--- Vnesenie dannyh v tablicu.
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
