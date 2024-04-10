@@ -248,6 +248,7 @@ int null
 alter table Employees
 add MiddleName nvarchar(30)
 
+--add new column LastName
 alter table Employees
 add LastName nvarchar(30)
 
