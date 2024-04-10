@@ -91,7 +91,7 @@ add constraint CK_Person_Age check (Age > 0 and Age < 150)
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 149)
 
---?
+--Show Person values, delete where Id = 8, show Person values
 select * from Person
 go
 delete from Person where Id = 8
@@ -102,7 +102,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- Show values from Person where in row City 'Gotham'
 select * from Person where City = 'Gotham'
 
 
@@ -110,7 +110,7 @@ select * from Person where City = 'Gotham'
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
+-- Two methods to show Values from Person where age 100 or 50 or 20
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
