@@ -143,7 +143,7 @@ select * from Person where Email not like '%@%'
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---show where Name has one of the letter
+--show where Name has one of the letters
 select * from Person where Name like '[^WAS]%'
 --- show where city is gotham or 'New York' and age is more and equals than 40
 select * from Person where (City = 'Gotham' or City = 'New York')
@@ -152,25 +152,26 @@ and Age >= 40
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- top 3 and showing only age and name columns
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- selects the top 50% of rows from person table
 select top 50 percent * from Person
---?
+-- selecting all from the table person where will be sorted by age as an integer
 select * from Person order by cast(Age as int)
+-- selecting all from the table person where will be sorted by age as a letter or sign
 select * from Person order by Age
 
---?
+--calculates the sum of all ages in the person table
 select sum(cast(Age as int)) from Person
 
---?
+-- selects the minimum age in the person table
 select min(cast(Age as int)) from Person
 
---?
+--select the maximum age in the person table
 select max(cast(Age as int)) from Person
-
+--calculates the sum of all ages who live in a specific city
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
