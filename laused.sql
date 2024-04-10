@@ -78,6 +78,9 @@ add Age nvarchar(10)
 update Person
 set Age = 149
 where Id = 8
+update Person
+set Age = 150
+where Id = 1
 
 -- adding constraint with a condition
 alter table Person
@@ -101,7 +104,7 @@ go
 delete from Person where Id = 8
 go
 select * from Person
-
+-----------------------------------------------
 --- lisame veeru juurde
 alter table Person
 add City nvarchar(25)
