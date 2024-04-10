@@ -198,6 +198,7 @@ values (3, 'HR', 'New York', 'Christie')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (4, 'Other Deparment', 'Sydney', 'Cindrella')
 
+--show all values from department
 select * from Department
 
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
