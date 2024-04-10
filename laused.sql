@@ -234,7 +234,7 @@ select min(cast(Salary as int)) from Employees
 alter table Employees
 add City nvarchar(25)
 
---novyj stolbec v tablicu Employees
+--novyj stolbec v tablicu Employees.
 alter table Employees
 alter column DepartmentId int NULL;
 
