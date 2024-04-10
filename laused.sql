@@ -154,7 +154,7 @@ select * from Person order by Age
 --sum all ages
 select sum(cast(Age as int)) from Person
 
---?
+--select min age
 select min(cast(Age as int)) from Person
 
 --?
