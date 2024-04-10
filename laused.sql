@@ -97,15 +97,14 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- vaateme koik Person tabelisse kus City võrdub Gotham
+--- kõik, kes elavad Gothamis
 select * from Person where City = 'Gotham'
-
 
 -- kõik, kes ei ela Gothamis
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
+--- näidala kõik, kes 100, 50 või 20 aastad vana
 select *from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
