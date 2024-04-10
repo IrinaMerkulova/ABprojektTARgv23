@@ -122,7 +122,7 @@ select * from Person where City like 'n%'
 -- query to select a person where email that contains @
 select * from Person where Email like '%@%'
 
--- ?
+-- query to select a person where email not contains @
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
