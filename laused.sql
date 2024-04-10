@@ -90,7 +90,7 @@ where Id = 8
 select * from Person
 
 --Dobavljaem ogranichenie dlja stolbca i obnovljaem dannye,
---menjaem vozrast soglasnoogranicheniju
+--menjaem vozrast soglasnoogranicheniju..
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
