@@ -116,7 +116,7 @@ select * from Person where City like 'n%'
 --- näidala kõik kus on @ Email-le
 select * from Person where Email like '%@%'
 
--- ?
+--- näidala kõik kus pole @ Email-le
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
