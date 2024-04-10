@@ -48,7 +48,7 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+--- constraint kustutamine tabelist Person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
