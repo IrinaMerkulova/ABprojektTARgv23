@@ -70,7 +70,7 @@ select * from Gender
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----?
+--- lisa uus andmeveerg
 alter table Person
 add Age nvarchar(10)
 
