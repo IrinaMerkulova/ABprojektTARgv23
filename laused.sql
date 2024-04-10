@@ -146,7 +146,7 @@ select sum(cast(Age as int)) from Person
 --otsi miinimumi 'Age'
 select min(cast(Age as int)) from Person
 
---?
+--otsi maksimumm 'Age'
 select max(cast(Age as int)) from Person
 
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
