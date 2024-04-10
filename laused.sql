@@ -139,7 +139,7 @@ and Age >= 40
 ---select first three rows
 select top 3 * from Person
 
---- ?
+--- select all values from person, then select top 3 rows by Age and show Name row
 select * from Person
 select top 3 Age, Name from Person
 
