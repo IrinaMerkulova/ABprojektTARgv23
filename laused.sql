@@ -151,12 +151,13 @@ select * from Person order by Age
 --Shows summ of all ages in Person
 select sum(cast(Age as int)) from Person
 
---?
+--Shows minimal value of all ages in Person
 select min(cast(Age as int)) from Person
 
---?
+--Shows max value of all ages in Person
 select max(cast(Age as int)) from Person
 
+--Shows summed age of all people in one city and gruops they by city
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
