@@ -155,6 +155,7 @@ select min(cast(Age as int)) from Person
 --- ostime max vanus
 select max(cast(Age as int)) from Person
 
+--- näidala kõik linna kui rühmid
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
