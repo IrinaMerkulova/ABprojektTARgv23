@@ -64,14 +64,14 @@ default 3 for GenderId
 
 
 ---- 2 tund
-
+--- показать обе таблицы
 select * from Person
 select * from Gender
-
+--- добавление данных в таблицу Person
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----?
+---Добавление столбца Age в таблицу Person
 alter table Person
 add Age nvarchar(10)
 
