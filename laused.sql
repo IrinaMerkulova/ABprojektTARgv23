@@ -1,10 +1,10 @@
 -- db loomine
 create database erwin;
 
---?
+-- db kustutamine?
 DRop DataBASE erwin;
 
---?
+-- dv valimine ja tabeli loomine "gender"?
 use erwin;
 create table Gender
 (
@@ -26,11 +26,11 @@ values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- foreign key lisamine ?
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+--andmete sisestamine tabelisse ?
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
@@ -49,11 +49,11 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+--foreign key kustutamine ?
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+--uus andmed lisamine ?
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
@@ -70,7 +70,7 @@ select * from Gender
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----?
+---column lisamine
 alter table Person
 add Age nvarchar(10)
 
@@ -79,14 +79,14 @@ update Person
 set Age = 149
 where Id = 8
 
---?
+-- constraint lisamine?
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
 
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
---?
+--andmed näetamine?
 select * from Person
 go
 delete from Person where Id = 8
