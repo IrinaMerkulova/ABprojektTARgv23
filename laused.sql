@@ -13,6 +13,7 @@ Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
 
+--table Person creation
 create table Person
 (
 Id int not null primary key,
