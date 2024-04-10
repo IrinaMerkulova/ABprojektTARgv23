@@ -100,7 +100,7 @@ add City nvarchar(25)
 --- kõik, kes elavad Gothamis
 select * from Person where City = 'Gotham'
 
--- kõik, kes ei ela Gothamis
+--- kõik, kes ei ela Gothamis
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
@@ -110,8 +110,10 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- näidala kõik alustada n City-le
 select * from Person where City like 'n%'
+
+--- näidala kõik kus on @ Email-le
 select * from Person where Email like '%@%'
 
 -- ?
