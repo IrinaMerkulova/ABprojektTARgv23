@@ -53,7 +53,7 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- proverjaem tablicu
 select * from Person
 
----Udalenie klucha
+---Udalenie klucha.
 alter table Person
 drop constraint tblPerson_GenderId_FK
 select * from Person
