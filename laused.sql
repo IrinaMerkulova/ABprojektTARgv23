@@ -4,7 +4,7 @@ create database AleksanderKaasik
 -- db kustutamine
 drop database AleksanderKaasik
 
---?
+--tabelid loomine
 create table Gender
 (
 Id int NOT NULL primary key,
