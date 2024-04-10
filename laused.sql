@@ -63,7 +63,7 @@ insert into Gender (Id, Gender)
 values (3, 'Unknown')
 select * from Gender
 
--- Dobavlenie vneshnego klucha
+-- Dobavlenie vneshnego klucha.
 alter table Person
 add constraint DF_Person_GenderId
 default 3 for GenderId
