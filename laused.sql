@@ -12,7 +12,8 @@ Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
 
---
+--Creating table Person
+use ChernykhGit
 create table Person
 (
 Id int not null primary key,
@@ -22,6 +23,7 @@ GenderId int
 )
 
 --- andmete sisestamine tabelisse
+use ChernykhGit
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
