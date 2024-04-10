@@ -222,15 +222,15 @@ values (10, 'Russell', 'Male', 8800, NULL)
 --shows al values from Employees
 select * from Employees
 
----?
+---Shows DepartmentId for all unique names
 select distinct Name, DepartmentId from Employees
 
----?
+---Shows SUmmary salary of al workers from Employees
 select sum(cast(Salary as int)) from Employees
----?
+---Shows minimal salary of al workers from Employees
 select min(cast(Salary as int)) from Employees
 
-
+--Adds new column City
 alter table Employees
 add City nvarchar(25)
 
