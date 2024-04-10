@@ -160,7 +160,7 @@ select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 --- tund 3
 
---- loome uued tabelid
+--- loome uued tabelid Department
 create table Department
 (
 Id int primary key,
@@ -168,7 +168,7 @@ DepartmentName nvarchar(50),
 Location nvarchar(50),
 DepartmentHead nvarchar(50)
 )
-
+--- loome uued tabelid Department Employees
 create table Employees
 (
 Id int primary key,
@@ -178,7 +178,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+--Добавление данных в таблицу Department
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -187,9 +187,9 @@ insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (3, 'HR', 'New York', 'Christie')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (4, 'Other Deparment', 'Sydney', 'Cindrella')
-
+--показать таблицу Department
 select * from Department
-
+--Добавление данных в таблицу Employees
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (1, 'Tom', 'Male', 4000, 1)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
@@ -210,18 +210,18 @@ insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (9, 'James', 'Male', 6500, NULL)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (10, 'Russell', 'Male', 8800, NULL)
-
+--показать таблицу Employees
 select * from Employees
 
----?
+---команда выбирает уникальные комбинации значений столбцов Name и DepartmentId из таблицы Employees
 select distinct Name, DepartmentId from Employees
 
----?
+---Запрос показывает суммарную зарплату всех сотрудников
 select sum(cast(Salary as int)) from Employees
----?
+---Запрос показывает минимальную зарплату всех сотрудников
 select min(cast(Salary as int)) from Employees
 
-
+---Изменение таблицы Employees
 alter table Employees
 add City nvarchar(25)
 
