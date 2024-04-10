@@ -1,10 +1,12 @@
 -- db loomine
-create database ....
+create database rosmanGIT;
 
---?
-DRop DataBASE ....
+-- DB remove
+drop database rosmanGIT;
 
---?
+use rosmanGIT;
+
+--table gender creation
 create table Gender
 (
 Id int NOT NULL primary key,
