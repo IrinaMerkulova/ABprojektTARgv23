@@ -142,7 +142,7 @@ select top 3 Age, Name from Person
 --- võtab pool esimest rida
 select top 50 percent * from Person
 
---?
+--- teisendada Age kuni INT
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
