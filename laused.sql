@@ -48,8 +48,8 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 
 -- vaatame tabeli andmeid
 select * from Person
-
---- ?
+-------------------------
+--- deleting the constraint named as tblPerson_GenderId_FK
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
