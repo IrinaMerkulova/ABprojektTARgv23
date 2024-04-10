@@ -125,7 +125,8 @@ select * from Person where Email like '_@_.com'
 
 -- näidala kõik, mida pole alguses kiri
 select * from Person where Name like '[^WAS]%'
---- ?
+
+--- kõik, kes elavad Gothamis või New York's ja vanem kui 40
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
