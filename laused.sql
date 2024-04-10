@@ -244,7 +244,7 @@ add DepartmentId
 int null
 
 
---?
+--add new column MiddleName
 alter table Employees
 add MiddleName nvarchar(30)
 
