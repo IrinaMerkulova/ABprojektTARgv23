@@ -34,7 +34,7 @@ select * from Gender
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- Vnosim dannye v tablicu Person
+-- Vnosim dannye v tablicu Person.
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
