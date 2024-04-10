@@ -125,8 +125,8 @@ select * from Person where Email like '%@%'
 -- query to select a person where email not contains @
 select * from Person where Email not like '%@%'
 
---- näitab, kelle on emailis ees ja peale @-märki
--- ainult üks täht
+--- email before and after @-symbol.com
+-- only one symbol
 select * from Person where Email like '_@_.com'
 
 --?
