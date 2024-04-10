@@ -140,10 +140,10 @@ select top 50 percent * from Person
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---otsi smmat 'Age'
+--otsi summat 'Age'
 select sum(cast(Age as int)) from Person
 
---?
+--otsi miinimumi 'Age'
 select min(cast(Age as int)) from Person
 
 --?
