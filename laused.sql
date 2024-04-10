@@ -222,7 +222,7 @@ values (10, 'Russell', 'Male', 8800, NULL)
 
 select * from Employees
 
----imena i ID bez povtorenija
+---imena i ID bez povtorenija.
 select distinct Name, DepartmentId from Employees
 
 ---summa zarplat
