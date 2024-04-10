@@ -110,7 +110,7 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- otsige tabelisse Person linna esimese tähega 'n' ja email 
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
