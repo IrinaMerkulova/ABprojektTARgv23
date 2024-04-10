@@ -160,6 +160,7 @@ select min(cast(Age as int)) from Person
 --select max age
 select max(cast(Age as int)) from Person
 
+--select city, summ ages and group by City
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
