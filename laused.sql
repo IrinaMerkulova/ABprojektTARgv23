@@ -151,7 +151,7 @@ select * from Person order by cast(Age as int)
 --select all from person and order by AGE
 select * from Person order by Age
 
---?
+--sum all ages
 select sum(cast(Age as int)) from Person
 
 --?
