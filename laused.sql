@@ -11,7 +11,7 @@ create table Gender
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
-
+--tabeli Person loomine
 create table Person
 (
 Id int not null primary key,
@@ -26,11 +26,11 @@ values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- updating the table Person- adding foreign key
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- data adding to the table person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
