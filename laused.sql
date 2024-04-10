@@ -152,7 +152,7 @@ select top 50 percent * from Person
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---Summa vozrasta
+--Summa vozrasta.
 select sum(cast(Age as int)) from Person
 
 --minimalnyj vozrast
