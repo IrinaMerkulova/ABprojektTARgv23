@@ -1,10 +1,11 @@
 -- db loomine
-create database ....
+create database mihhailGit;
 
---?
-DRop DataBASE ....
+--db kustutamine
+DRop DataBASE mihhailGit;
 
---?
+--tabeli gender loomine
+use mihhailGit;
 create table Gender
 (
 Id int NOT NULL primary key,
