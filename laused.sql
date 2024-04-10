@@ -146,7 +146,7 @@ select top 3 Age, Name from Person
 --- select 50 percent records from person
 select top 50 percent * from Person
 
---?
+--select all from person then CAST to change datatype to INT and order by AGE
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
