@@ -98,7 +98,7 @@ delete from Person where Id = 8
 go
 select * from Person
 
---- lisame veeru juurde
+--- add new column City to Person
 alter table Person
 add City nvarchar(25)
 
