@@ -239,10 +239,10 @@ alter table Employees
 alter column DepartmentId int NULL;
 
 
---novyj stolbec v tablicu Employees
+--novyj stolbec v tablicu Employees.
 alter table Employees
 add MiddleName nvarchar(30)
---novyj stolbec v tablicu Employees
+--novyj stolbec v tablicu Employees.
 alter table Employees
 add LastName nvarchar(30)
 
