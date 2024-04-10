@@ -225,7 +225,7 @@ select * from Employees
 ---imena i ID bez povtorenija.
 select distinct Name, DepartmentId from Employees
 
----summa zarplat
+---summa zarplat.
 select sum(cast(Salary as int)) from Employees
 ---minimalnaja zarplata
 select min(cast(Salary as int)) from Employees
