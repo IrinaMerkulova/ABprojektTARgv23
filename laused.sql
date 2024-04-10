@@ -142,7 +142,7 @@ and Age >= 40
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- tri verhnie zapisi
+--- tri verhnie zapisi.
 select * from Person
 select top 3 Age, Name from Person
 
