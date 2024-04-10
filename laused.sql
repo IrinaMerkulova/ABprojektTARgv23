@@ -116,20 +116,21 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+--- Show cities and emails from Person which is starting from "n" and in which exists @
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- ?
+-- Shows emails from person that doesnt content "@"
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+--Shows all values from person where fist letter not W/A/S 
 select * from Person where Name like '[^WAS]%'
---- ?
+
+--- Shows values from person where person City = Gotham/New York and person yenger then 41 years
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
