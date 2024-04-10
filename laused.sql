@@ -1,16 +1,18 @@
 -- db loomine
-create database ....
+create database ChernykhGit
 
---?
-DRop DataBASE ....
+--db kustutamine
+DRop DataBASE ChernykhGit
 
---?
+--Table Gender creating
+use ChernykhGit
 create table Gender
 (
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
 
+--
 create table Person
 (
 Id int not null primary key,
