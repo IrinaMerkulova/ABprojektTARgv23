@@ -1,16 +1,18 @@
 -- db loomine
-create database ....
+create database RudenkoGit;
 
---?
-DRop DataBASE ....
+-- db kustutamine
+DRop DataBASE RudenkoGit;
 
---?
+--tabeli Gender loomine
+use RudenkoGit
 create table Gender
 (
 Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
-
+--tabeli Person loomine
+use RudenkoGit
 create table Person
 (
 Id int not null primary key,
