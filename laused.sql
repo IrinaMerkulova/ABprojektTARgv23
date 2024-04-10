@@ -1,5 +1,5 @@
 -- db loomine
-create database ....
+create database AleksanderKaasik
 
 --?
 DRop DataBASE ....
