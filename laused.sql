@@ -26,11 +26,11 @@ values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---Proverjaem tablicu
+--Proverjaem tablicu.
 select * from Gender
 
 
--- Sozdaem kluchi
+-- Sozdaem kluchi.
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
