@@ -286,6 +286,7 @@ from Employees
 --- show all values from Employees
 select * from Employees
 
+--- show all values from Department
 select * from Department
 
 
