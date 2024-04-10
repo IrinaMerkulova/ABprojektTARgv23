@@ -66,6 +66,7 @@ default 3 for GenderId
 
 ---- 2 tund
 
+-- view all values from person and gender
 select * from Person
 select * from Gender
 
