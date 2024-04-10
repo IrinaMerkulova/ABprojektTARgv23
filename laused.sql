@@ -12,6 +12,8 @@ Id int NOT NULL primary key,
 Gender nvarchar(10) not null
 )
 
+--tabeli Person loomine
+use skljarGit;
 create table Person
 (
 Id int not null primary key,
@@ -20,17 +22,17 @@ Email nvarchar(30),
 GenderId int
 )
 
---- andmete sisestamine tabelisse
+--- andmete sisestamine tabelisse Gender
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- foreign key loomine
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- andmete sisestamine tabelisse Person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
@@ -49,11 +51,11 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+--- foreign key kustutamine
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+-- andmete sisestamine tabelisse Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
@@ -64,13 +66,16 @@ default 3 for GenderId
 
 ---- 2 tund
 
+
+--vaatame tabeli andmeid
 select * from Person
 select * from Gender
 
+--võõrvõtme kontroll(default 3)
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----?
+--veeru Age loomine 
 alter table Person
 add Age nvarchar(10)
 
@@ -79,25 +84,25 @@ update Person
 set Age = 149
 where Id = 8
 
---?
+--uue võõrvõtme lisamine
 alter table Person
 add constraint CK_Person_Age check (Age > 0 and Age < 150)
-
+--võõrvõtme kontroll(Age on rohkem kui 150)
 insert into Person (Id, Name, Email, GenderId, Age)
 values (9, 'Test', 'Test', 2, 160)
 
---?
+--kustutamine andmed, kus id=8
 select * from Person
 go
 delete from Person where Id = 8
 go
 select * from Person
 
---- lisame veeru juurde
+-- lisame veeru juurde
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- vaatame andmed
 select * from Person where City = 'Gotham'
 
 
@@ -105,51 +110,52 @@ select * from Person where City = 'Gotham'
 select * from Person where City <> 'Gotham'
 select * from Person where City != 'Gotham'
 
--- ?
-select *from Person where Age = 100 or 
+-- vaatame andmed tabelis Person, kus Age = 100; 50; 20
+select * from Person where Age = 100 or 
 Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- ?
+-- näitab, kus City algab 'n'; ja kelle Email on '@'
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- ?
+-- näitab, kelle Email pole '@'
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
 -- ainult üks täht
 select * from Person where Email like '_@_.com'
 
---?
+-- näitab andmed, kus esimesed tähed ei ole 'W','A','S'
 select * from Person where Name like '[^WAS]%'
---- ?
+--- näitab andmed, kus City = 'Gotham' or 'New York'
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
 ---võtab kolm esimest rida
 select top 3 * from Person
 
---- ?
+--- näitab top 3 andmed 
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- näitab pool tabeli
 select top 50 percent * from Person
---?
+-- näitab andmed kindlas järjekorras
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---?
+-- näitab andmete hulka
 select sum(cast(Age as int)) from Person
 
---?
+-- näitab min andmeid
 select min(cast(Age as int)) from Person
 
---?
+-- näitab max andmeid
 select max(cast(Age as int)) from Person
 
+-- näitab andmete hulka nagu TotalAge
 select City, sum(cast(Age as int)) as TotalAge from Person group by City
 
 
@@ -167,6 +173,7 @@ Location nvarchar(50),
 DepartmentHead nvarchar(50)
 )
 
+--uue tabeli loomine
 create table Employees
 (
 Id int primary key,
@@ -176,7 +183,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+--sisestame andmed tabelisse
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -186,8 +193,10 @@ values (3, 'HR', 'New York', 'Christie')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (4, 'Other Deparment', 'Sydney', 'Cindrella')
 
+--näitab andmed
 select * from Department
 
+--sisetamine andmed tabelisse
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (1, 'Tom', 'Male', 4000, 1)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
@@ -209,33 +218,40 @@ values (9, 'James', 'Male', 6500, NULL)
 insert into Employees (Id, Name, Gender, Salary, DepartmentId)
 values (10, 'Russell', 'Male', 8800, NULL)
 
+
+--näitab andmed
 select * from Employees
 
----?
+--näitab mitteduplikaatandmeid
 select distinct Name, DepartmentId from Employees
 
----?
+-- näitab sum andmed
 select sum(cast(Salary as int)) from Employees
----?
+-- näitab min andmed
 select min(cast(Salary as int)) from Employees
 
-
+-- uue veeru loomine
 alter table Employees
 add City nvarchar(25)
 
-
+-- uue veeru loomine
 alter table Employees
 add DepartmentId
 int null
 
+--uue veeru loomine
+alter table Employees
+add FirstName nvarchar(30)
 
---?
+--uue veeru loomine
 alter table Employees
 add MiddleName nvarchar(30)
 
+--uue veeru loomine
 alter table Employees
 add LastName nvarchar(30)
 
+--andmete värskendamine
 update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
 update Employees set FirstName = 'Pam', MiddleName = NULL, LastName = 'Anderson'
