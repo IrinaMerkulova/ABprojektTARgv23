@@ -52,13 +52,14 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+-- Deleted tblPerson_GenderId_FK in table person
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
--- ?
+-- Inserted values 3, 'Unknown' in tabel Gender
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
+
 -- lisame võõrvõtme uuesti
 alter table Person
 add constraint DF_Person_GenderId
