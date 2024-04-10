@@ -198,7 +198,7 @@ Salary nvarchar(50),
 DepartmentId int
 )
 
---?
+-- inserting data to the tables
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
 values (1, 'IT', 'London', 'Rick')
 insert into Department (Id, DepartmentName, Location, DepartmentHead)
@@ -233,28 +233,29 @@ values (10, 'Russell', 'Male', 8800, NULL)
 
 select * from Employees
 
----?
+---selecting distinct names 
 select distinct Name, DepartmentId from Employees
 
----?
+--- selecting the sum of all salaries from the table employees
 select sum(cast(Salary as int)) from Employees
----?
+---selecting the minimum of all salaries from the table employees
 select min(cast(Salary as int)) from Employees
 
-
+--updating table employees
 alter table Employees
 add City nvarchar(25)
 
-
+select * from Employees
+-- the column with name 'DepartmentId' is existing already
 alter table Employees
 add DepartmentId
 int null
 
 
---?
+--adding a new column MiddleName
 alter table Employees
 add MiddleName nvarchar(30)
-
+--adding a new column LastName
 alter table Employees
 add LastName nvarchar(30)
 
