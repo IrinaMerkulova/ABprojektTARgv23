@@ -51,7 +51,7 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- view all values from person
 select * from Person
 
---- ?
+--remove foreign key from Person table
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
