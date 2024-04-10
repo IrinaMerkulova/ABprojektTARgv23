@@ -252,6 +252,10 @@ add MiddleName nvarchar(30)
 alter table Employees
 add LastName nvarchar(30)
 
+--add new column FirstName
+alter table Employees
+add FirstName nvarchar(30)
+
 update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
 update Employees set FirstName = 'Pam', MiddleName = NULL, LastName = 'Anderson'
