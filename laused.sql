@@ -21,17 +21,17 @@ Email nvarchar(30),
 GenderId int
 )
 
---- andmete sisestamine tabelisse
+--- andmete sisestamine tabelisse Gender
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--- добавляет ограничение внешнего ключа (foreign key constraint) на столбец GenderId в таблице Person. ---
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+-- andmete sisestamine tabelisse Person
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
@@ -50,7 +50,7 @@ values (7, 'Spiderman', 'spider@spiderman.com', 2)
 -- vaatame tabeli andmeid
 select * from Person
 
---- ?
+--- удаляет ограничение внешнего ключа (foreign key constraint)
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
