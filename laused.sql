@@ -22,18 +22,18 @@ Email nvarchar(30),
 GenderId int
 )
 
---- andmete sisestamine tabelisse
+--andmete sisestamine tabelisse
 use ChernykhGit
 insert into Gender (Id, Gender)
 values (1, 'Female')
 insert into Gender (Id, Gender)
 values (2, 'Male')
 
---- ?
+--Table Person altertation: adding foreign key
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
--- ?
+--Table Peson insertation: Adding data in Id, Name, Email, GenderId
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
