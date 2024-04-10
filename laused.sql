@@ -149,7 +149,7 @@ select * from Person order by Age
 --- sum kõik Age
 select sum(cast(Age as int)) from Person
 
---?
+--- ostime min vanus
 select min(cast(Age as int)) from Person
 
 --?
