@@ -97,7 +97,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- vaateme koik Person tabelisse kus City võrdub Gotham
 select * from Person where City = 'Gotham'
 
 
