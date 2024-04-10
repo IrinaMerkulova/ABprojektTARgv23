@@ -231,7 +231,7 @@ select distinct Name, DepartmentId from Employees
 
 --sum all salaries
 select sum(cast(Salary as int)) from Employees
-
+--select min salary
 select min(cast(Salary as int)) from Employees
 
 
