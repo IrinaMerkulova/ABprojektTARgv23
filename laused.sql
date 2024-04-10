@@ -143,8 +143,9 @@ select top 3 * from Person
 select * from Person
 select top 3 Age, Name from Person
 
---- ?
+--- select 50 percent records from person
 select top 50 percent * from Person
+
 --?
 select * from Person order by cast(Age as int)
 select * from Person order by Age
