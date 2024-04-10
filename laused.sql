@@ -58,7 +58,7 @@ alter table Person
 drop constraint tblPerson_GenderId_FK
 select * from Person
 
--- Dobavlenie novogo pola v tablicu Gender
+-- Dobavlenie novogo pola v tablicu Gender.
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 select * from Gender
