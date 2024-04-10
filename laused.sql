@@ -1,10 +1,11 @@
 -- db loomine
-create database ....
+create database erwin;
 
 --?
-DRop DataBASE ....
+DRop DataBASE erwin;
 
 --?
+use erwin;
 create table Gender
 (
 Id int NOT NULL primary key,
