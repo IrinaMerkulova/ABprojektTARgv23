@@ -108,7 +108,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- poisk vseh kto s goroda Gotham takih 0
+-- poisk vseh kto s goroda Gotham takih 0.
 select * from Person where City = 'Gotham'
 select * from Person
 
