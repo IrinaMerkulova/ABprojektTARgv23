@@ -1,8 +1,8 @@
 -- db loomine
-create database Tarpv22
+create database ....
 
 --?
-DRop DataBASE Tarpv22
+DRop DataBASE ....
 
 --?
 create table Gender
