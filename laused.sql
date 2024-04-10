@@ -104,7 +104,7 @@ delete from Person where Id = 8
 go
 select * from Person
 
---- dobavljaem stolbec City
+--- dobavljaem stolbec City.
 alter table Person
 add City nvarchar(25)
 
