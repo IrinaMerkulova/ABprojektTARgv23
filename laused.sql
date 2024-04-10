@@ -96,7 +96,7 @@ select * from Person
 alter table Person
 add City nvarchar(25)
 
--- ?
+-- otsing tabelisse Person 'Gotman'
 select * from Person where City = 'Gotham'
 
 
