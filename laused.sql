@@ -148,7 +148,7 @@ select top 3 Age, Name from Person
 
 --- verhnie 50% zapisej.
 select top 50 percent * from Person
---preobrazovanie stolbca Age v celye znachenija
+--preobrazovanie stolbca Age v celye znachenija.
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
