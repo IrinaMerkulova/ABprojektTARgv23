@@ -229,7 +229,7 @@ add DepartmentId
 int null
 
 
--- lisa uus column?
+-- lisa uus column(34)
 alter table Employees
 add MiddleName nvarchar(30)
 
