@@ -34,7 +34,7 @@ as begin
 	select @EmployeeCount = count(Id) from Employees where Gender = @Gender
 end
 
--- teeb protseduur, mis tagasatb female ?
+-- teeb protseduur, mis tagasatb female (5)
 declare @TotalCount int
 exec spGetEmployeeCountByGender 'Female', @TotalCount out
 if(@TotalCount = 0)
