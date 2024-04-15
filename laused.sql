@@ -144,7 +144,7 @@ select * from Person order by Age
 --naitab kokku inimeste vanused.(26)
 select sum(cast(Age as int)) from Person
 
---naitab väikseim inimeste vanus.?
+--naitab väikseim inimeste vanus.(27)
 select min(cast(Age as int)) from Person
 
 --naitab suurim inimeste vanus.?
