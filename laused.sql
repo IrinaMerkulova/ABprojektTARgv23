@@ -30,7 +30,7 @@ values (2, 'Male')
 alter table Person add constraint tblPerson_GenderId_FK
 foreign key (GenderId) references Gender(Id)
 
---andmete sisestamine tabelisse ?
+--andmete sisestamine tabelisse (6)
 insert into Person (Id, Name, Email, GenderId)
 values (1, 'Supermees', 's@s.com', 2)
 insert into Person (Id, Name, Email, GenderId)
