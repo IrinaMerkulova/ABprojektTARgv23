@@ -1,7 +1,7 @@
 -- db loomine (1)
 create database erwin;
 
--- db kustutamine?
+-- db kustutamine (2)
 DRop DataBASE erwin;
 
 -- dv valimine ja tabeli loomine "gender"?
