@@ -4,7 +4,7 @@ create database erwin;
 -- db kustutamine (2)
 DRop DataBASE erwin;
 
--- dv valimine ja tabeli loomine "gender"?
+-- dv valimine ja tabeli loomine "gender" (3)
 use erwin;
 create table Gender
 (
