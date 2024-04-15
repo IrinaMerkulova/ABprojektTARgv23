@@ -1,6 +1,6 @@
 
 
---- loome stored procedure, mis kuvab vaate
+--- loome stored procedure, mis kuvab vaate (1)
 create procedure spGetEmployees
 as begin
 	select FirstName, Gender from Employees
