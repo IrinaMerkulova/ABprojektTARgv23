@@ -211,12 +211,12 @@ values (10, 'Russell', 'Male', 8800, NULL)
 
 select * from Employees
 
--- Vali kõikide töötajate nimed ja osakonnad
+-- Vali kõikide töötajate nimed ja osakonnad (31)
 select distinct Name, DepartmentId from Employees
 
---- Leia töötajate palkade summa?
+--- Leia töötajate palkade summa(32)
 select sum(cast(Salary as int)) from Employees
---- Leia kõige väiksem palk töötajate hulgas.?
+--- Leia kõige väiksem palk töötajate hulgas(33)
 select min(cast(Salary as int)) from Employees
 
 
