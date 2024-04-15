@@ -131,7 +131,7 @@ and Age >= 40
 ---võtab kolm esimest rida (23)
 select top 3 * from Person
 
---- naita 3 vanemad inimesed ?
+--- naita 3 vanemad inimesed (24)
 select * from Person
 select top 3 Age, Name from Person
 
