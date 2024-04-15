@@ -128,7 +128,7 @@ select * from Person where Name like '[^WAS]%'
 select * from Person where (City = 'Gotham' or City = 'New York')
 and Age >= 40
 
----võtab kolm esimest rida
+---võtab kolm esimest rida (23)
 select top 3 * from Person
 
 --- naita 3 vanemad inimesed ?
