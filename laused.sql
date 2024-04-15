@@ -1,4 +1,4 @@
--- db loomine
+-- db loomine (1)
 create database erwin;
 
 -- db kustutamine?
