@@ -93,11 +93,11 @@ delete from Person where Id = 8
 go
 select * from Person
 
---- lisame veeru juurde
+--- lisame veeru juurde (14)
 alter table Person
 add City nvarchar(25)
 
--- näita person kus elavad gotham ?
+-- näita person kus elavad gotham (15)
 select * from Person where City = 'Gotham'
 
 
