@@ -119,7 +119,7 @@ select * from Person where Email like '%@%'
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
--- ainult üks täht
+-- ainult üks täht (20)
 select * from Person where Email like '_@_.com'
 
 -- naita inimene kellel esimesed tahed on was?
