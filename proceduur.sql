@@ -54,7 +54,7 @@ create proc spTotalCount2
 as begin
 	select @TotalCount = count(Id) from Employees
 end
---- käivitame sp
+--- käivitame sp (8)
 declare @TotalEmployees int
 execute spTotalCount2 @TotalEmployees output
 select @TotalEmployees
