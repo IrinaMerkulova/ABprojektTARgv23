@@ -46,14 +46,14 @@ values (6, 'Antman', 'ant"ant.com', 2)
 insert into Person (Id, Name, Email, GenderId)
 values (7, 'Spiderman', 'spider@spiderman.com', 2)
 
--- vaatame tabeli andmeid
+-- vaatame tabeli andmeid (7)
 select * from Person
 
---foreign key kustutamine ?
+--foreign key kustutamine (8)
 alter table Person
 drop constraint tblPerson_GenderId_FK
 
---uus andmed lisamine ?
+--uus andmed lisamine (9)
 insert into Gender (Id, Gender)
 values (3, 'Unknown')
 -- lisame võõrvõtme uuesti
