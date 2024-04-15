@@ -111,7 +111,7 @@ Age = 50 or Age = 20
 select * from Person where Age in (100, 50, 20)
 
 
---- näita inimene, kus esimene täht on n ja kus email on @ ?
+--- näita inimene, kus esimene täht on n ja kus email on @ (18)
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
