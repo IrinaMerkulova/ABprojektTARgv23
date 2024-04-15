@@ -141,7 +141,7 @@ select top 50 percent * from Person
 select * from Person order by cast(Age as int)
 select * from Person order by Age
 
---naitab kokku inimeste vanused.?
+--naitab kokku inimeste vanused.(26)
 select sum(cast(Age as int)) from Person
 
 --naitab väikseim inimeste vanus.?
