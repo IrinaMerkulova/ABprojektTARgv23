@@ -70,11 +70,11 @@ select * from Gender
 insert into Person (Id, Name, Email)
 values (8, 'Test', 'Test')
 
----column lisamine
+---column lisamine (10)
 alter table Person
 add Age nvarchar(10)
 
---uuendame andmeid
+--uuendame andmeid 
 update Person
 set Age = 149
 where Id = 8
