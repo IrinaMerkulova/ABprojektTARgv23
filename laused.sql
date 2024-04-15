@@ -122,7 +122,7 @@ select * from Person where Email not like '%@%'
 -- ainult üks täht (20)
 select * from Person where Email like '_@_.com'
 
--- naita inimene kellel esimesed tahed on was?
+-- naita inimene kellel esimesed tahed on was? (21)
 select * from Person where Name like '[^WAS]%'
 -- naita inimesed kes elaved gotham voui new yor j age on vahem kui 40 ?
 select * from Person where (City = 'Gotham' or City = 'New York')
