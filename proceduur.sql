@@ -10,7 +10,7 @@ spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- protseduuri loomine, mis naitab 2 columns from emlojees koos inner joiniga
+--- protseduuri loomine, mis naitab 2 columns from emlojees koos inner joiniga (2)
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
