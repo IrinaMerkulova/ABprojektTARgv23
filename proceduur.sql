@@ -26,7 +26,7 @@ spGetEmployeesByGenderAndDepartment @DepartmentId =  1, @Gender = 'Male'
 
 
 
---protseduur, mis tagastab töötajate arvu sugu järgi.
+--protseduur, mis tagastab töötajate arvu sugu järgi.(4)
 create proc spGetEmployeeCountByGender
 @Gender nvarchar(20),
 @EmployeeCount int output
