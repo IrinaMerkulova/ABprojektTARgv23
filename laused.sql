@@ -115,7 +115,7 @@ select * from Person where Age in (100, 50, 20)
 select * from Person where City like 'n%'
 select * from Person where Email like '%@%'
 
--- näita kus email on @ ?
+-- näita kus email on @ (19)
 select * from Person where Email not like '%@%'
 
 --- näitab, kelle on emailis ees ja peale @-märki
