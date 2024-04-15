@@ -135,7 +135,7 @@ select top 3 * from Person
 select * from Person
 select top 3 Age, Name from Person
 
---- naita 50 percent inimesed?
+--- naita 50 percent inimesed (25)
 select top 50 percent * from Person
 -- naitab person age?
 select * from Person order by cast(Age as int)
