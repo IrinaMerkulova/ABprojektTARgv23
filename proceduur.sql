@@ -59,7 +59,7 @@ declare @TotalEmployees int
 execute spTotalCount2 @TotalEmployees output
 select @TotalEmployees
 
----loome protseduur mis tagastab nimi from id 
+---loome protseduur mis tagastab nimi from id (9)
 create proc spGetNameById1
 @Id int,
 @FirstName nvarchar(50) output
