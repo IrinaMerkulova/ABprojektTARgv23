@@ -34,7 +34,7 @@ as begin
 	select @EmployeeCount = count(Id) from Employees where Gender = @Gender
 end
 
--- ?
+--- func to check gender is empty or not
 declare @TotalCount int
 exec spGetEmployeeCountByGender 'Female', @TotalCount out
 if(@TotalCount = 0)
@@ -79,7 +79,7 @@ as begin
 	return (select FirstName from Employees where Id = @Id)
 end
 
--- ?
+-- Shows name of person by ID
 declare @EmployeeName nvarchar(50)
 exec @EmployeeName = spGetNameById2 1
 print 'Name of the employee = ' + @EmployeeName
