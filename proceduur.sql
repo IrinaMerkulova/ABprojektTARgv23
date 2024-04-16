@@ -10,7 +10,7 @@ spGetEmployees
 exec spGetEmployees
 execute spGetEmployees
 
---- 
+---  näidala kõik valitud sugu
 create proc spGetEmployeesByGenderAndDepartment
 @Gender nvarchar(20),
 @DepartmentId int
