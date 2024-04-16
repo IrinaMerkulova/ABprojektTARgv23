@@ -72,14 +72,14 @@ declare @FirstName nvarchar(50)
 execute spGetNameById1 6, @FirstName output
 print 'Name of the employee = ' + @FirstName
 
---?
+--- Getting name from id
 create proc spGetNameById2
 @Id int
 as begin
 	return (select FirstName from Employees where Id = @Id)
 end
 
--- Shows name of person by ID
+--- Shows name of person by ID
 declare @EmployeeName nvarchar(50)
 exec @EmployeeName = spGetNameById2 1
 print 'Name of the employee = ' + @EmployeeName
