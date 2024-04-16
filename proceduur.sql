@@ -59,7 +59,7 @@ declare @TotalEmployees int
 execute spTotalCount2 @TotalEmployees output
 select @TotalEmployees
 
---- ?
+--- show FirstName by id
 create proc spGetNameById1
 @Id int,
 @FirstName nvarchar(50) output
@@ -67,7 +67,7 @@ as begin
 	select @FirstName = FirstName from employees where Id = @Id
 end
 
---?
+--- show FirstName using by id
 declare @FirstName nvarchar(50)
 execute spGetNameById1 6, @FirstName output
 print 'Name of the employee = ' + @FirstName
