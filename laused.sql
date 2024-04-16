@@ -235,7 +235,7 @@ add DepartmentId
 int null
 
 
---?
+--- Lisa uues veergid 
 alter table Employees
 add MiddleName nvarchar(30)
 
