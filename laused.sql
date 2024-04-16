@@ -220,7 +220,7 @@ select * from Employees
 --- näidata ainulaadseid väärtusi 
 select distinct Name, DepartmentId from Employees
 
----?
+--- Show sum of salary of people
 select sum(cast(Salary as int)) from Employees
 ---?
 select min(cast(Salary as int)) from Employees
