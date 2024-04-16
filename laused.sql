@@ -222,7 +222,7 @@ select distinct Name, DepartmentId from Employees
 
 --- Show sum of salary of people
 select sum(cast(Salary as int)) from Employees
----?
+--- Show min salary of all people
 select min(cast(Salary as int)) from Employees
 
 
