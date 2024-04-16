@@ -242,6 +242,10 @@ add MiddleName nvarchar(30)
 alter table Employees
 add LastName nvarchar(30)
 
+--- Adding code to change to table column Employees to change less
+alter table Employees
+RENAME COLUMN Name to FirstName; 
+
 update Employees set FirstName = 'Tom', MiddleName = 'Nick', LastName = 'Jones'
 where Id = 1
 update Employees set FirstName = 'Pam', MiddleName = NULL, LastName = 'Anderson'
