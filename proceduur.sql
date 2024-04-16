@@ -48,7 +48,7 @@ declare @TotalCount int
 exec spGetEmployeeCountByGender @EmployeeCount = @TotalCount out, @Gender = 'Male'
 print @TotalCount
 
----?
+--- loome procedure: näidala kõik tööline
 create proc spTotalCount2
 @TotalCount int output
 as begin
